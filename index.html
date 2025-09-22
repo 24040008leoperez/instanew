@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Instagram Mejorado</title>
+  <link rel="stylesheet" href="styles/style3.css">
+</head>
+<body>
+  <!-- 🔹 Barra lateral -->
+  <aside class="sidebar">
+    <h2>Menú</h2>
+    <ul>
+      <li><a href="#" onclick="mostrarSeccion('feed')">Inicio</a></li>
+      <li><a href="#" onclick="mostrarSeccion('perfil')">Perfil</a></li>
+      <li><a href="#" onclick="mostrarSeccion('mensajes')">Mensajes</a></li>
+      <li><a href="#" onclick="mostrarSeccion('config')">Configuración</a></li>
+      <li><a href="#">Explorar</a></li>
+      <li><a href="#">Notificaciones</a></li>
+      <li><a href="#">Guardados</a></li>
+      <li><a href="#">Amigos</a></li>
+    </ul>
+  </aside>
+
+  <div class="main-content">
+    <!-- 🔹 Barra superior -->
+    <header>
+      <h1>Mini Instagram</h1>
+      <nav>
+        <button onclick="mostrarSeccion('feed')">Inicio</button>
+        <button onclick="mostrarSeccion('perfil')">Perfil</button>
+        <button onclick="mostrarSeccion('mensajes')">Mensajes</button>
+        <button onclick="mostrarSeccion('config')">Configuración</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 🔹 Sección Feed -->
+      <section id="feed" class="activo">
+        <div class="historias">
+          <div class="historia" onclick="abrirHistoria(0)"><img src="images/perfil.jpg" alt="Mi historia"><p>@leoperez</p></div>
+          <div class="historia" onclick="abrirHistoria(1)"><img src="images/post1.jpg" alt="Historia"><p>@osvaldogg</p></div>
+          <div class="historia" onclick="abrirHistoria(2)"><img src="images/post2.jpg" alt="Historia"><p>@engelitopp</p></div>
+          <div class="historia" onclick="abrirHistoria(3)"><img src="images/post3.jpg" alt="Historia"><p>@airisvv</p></div>
+          <div class="historia" onclick="abrirHistoria(4)"><img src="images/post4.jpg" alt="Historia"><p>@lucaslol</p></div>
+        </div>
+
+        <div class="post feed-post">
+          <img src="images/post1.jpg" alt="Post 1">
+          <p>pandilla fc, en la final vamos siuuu</p>
+          <div class="acciones">
+            <button onclick="darLike(this)">❤️ Like</button>
+            <button onclick="comentar(this)">💬 Comentar</button>
+          </div>
+          <div class="comentarios"></div>
+        </div>
+
+        <div class="post feed-post">
+          <img src="images/post2.jpg" alt="Post 2">
+          <p>cukita bonita la kiero mucho</p>
+          <div class="acciones">
+            <button onclick="darLike(this)">❤️ Like</button>
+            <button onclick="comentar(this)">💬 Comentar</button>
+          </div>
+          <div class="comentarios"></div>
+        </div>
+
+        <div class="post feed-post">
+          <img src="images/post3.jpg" alt="Post 3">
+          <p>la mascota de mi novia bonita☀️</p>
+          <div class="acciones">
+            <button onclick="darLike(this)">❤️ Like</button>
+            <button onclick="comentar(this)">💬 Comentar</button>
+          </div>
+          <div class="comentarios"></div>
+        </div>
+
+        <div class="post feed-post">
+          <img src="images/post4.jpg" alt="Post 4">
+          <p>los amigos negros x siempre</p>
+          <div class="acciones">
+            <button onclick="darLike(this)">❤️ Like</button>
+            <button onclick="comentar(this)">💬 Comentar</button>
+          </div>
+          <div class="comentarios"></div>
+        </div>
+      </section>
+
+      <!-- 🔹 Sección Perfil -->
+      <section id="perfil">
+        <h2>Mi Perfil</h2>
+        <div class="perfil-info">
+          <div class="perfil-arriba">
+            <img id="fotoPerfil" src="images/perfil.jpg" alt="Foto de perfil">
+            <div class="estadisticas">
+              <div class="stat"><strong>3</strong><span>Publicaciones</span></div>
+              <div class="stat"><strong>153</strong><span>Seguidores</span></div>
+              <div class="stat"><strong>120</strong><span>Seguidos</span></div>
+            </div>
+          </div>
+          <h3>@leoperez</h3>
+          <p>Biografía: m gusta la musica y echar cotorreo</p>
+          <input type="file" id="inputFoto" accept="image/*">
+          <div class="perfil-botones">
+            <button>Editar perfil</button>
+            <button>Compartir</button>
+          </div>
+        </div>
+
+        <h3>Historias destacadas</h3>
+        <div class="historias-destacadas">
+          <div class="historias">
+            <div class="historia" onclick="abrirHistoriaDestacada(0)"><img src="images/post1.jpg" alt="Destacada 1"><p>equipodefut</p></div>
+            <div class="historia" onclick="abrirHistoriaDestacada(1)"><img src="images/post2.jpg" alt="Destacada 2"><p>cukitaaa</p></div>
+            <div class="historia" onclick="abrirHistoriaDestacada(2)"><img src="images/post3.jpg" alt="Destacada 3"><p>Mascota</p></div>
+          </div>
+        </div>
+
+        <div class="perfil-posts">
+          <div class="post" onclick="abrirModalPerfil(0)">
+            <img src="images/ppost1.jpg" alt="Post 1">
+            <p>regalito de mi viejorrra</p>
+            <div class="acciones">
+              <button onclick="darLike(this)">❤️ Like</button>
+              <button onclick="comentar(this)">💬 Comentar</button>
+            </div>
+            <div class="comentarios"></div>
+          </div>
+          <div class="post" onclick="abrirModalPerfil(1)">
+            <img src="images/ppost2.jpg" alt="Post 2">
+            <p>en la skul</p>
+            <div class="acciones">
+              <button onclick="darLike(this)">❤️ Like</button>
+              <button onclick="comentar(this)">💬 Comentar</button>
+            </div>
+            <div class="comentarios"></div>
+          </div>
+          <div class="post" onclick="abrirModalPerfil(2)">
+            <img src="images/ppost3.jpg" alt="Post 3">
+            <p>Mi noviecita❤️</p>
+            <div class="acciones">
+              <button onclick="darLike(this)">❤️ Like</button>
+              <button onclick="comentar(this)">💬 Comentar</button>
+            </div>
+            <div class="comentarios"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🔹 Sección Mensajes -->
+      <section id="mensajes">
+        <h2>Mensajes</h2>
+        <input type="text" id="buscarChat" class="chat-search" placeholder="Buscar chat...">
+        <div class="chat-list" id="bandejaChats">
+          <div class="chat-item" onclick="abrirChat('Airis', event)">
+            <img src="images/airis.jpg" alt="Airis" class="chat-avatar"><span>Airis</span>
+          </div>
+          <div class="chat-item" onclick="abrirChat('Juan', event)">
+            <img src="images/juan.jpg" alt="Juan" class="chat-avatar"><span>Juan</span>
+          </div>
+          <div class="chat-item" onclick="abrirChat('Lucas', event)">
+            <img src="images/lucas.jpg" alt="Lucas" class="chat-avatar"><span>Lucas</span>
+          </div>
+          <div class="chat-item" onclick="abrirChat('Angel', event)">
+            <img src="images/angel.jpg" alt="Angel" class="chat-avatar"><span>Angel</span>
+          </div>
+          <div class="chat-item" onclick="abrirChat('Andrés', event)">
+            <img src="images/andres.jpg" alt="Andrés" class="chat-avatar"><span>Andrés</span>
+          </div>
+        </div>
+        <div class="chat-box" id="chatBox">
+          <p class="mensaje-sistema">Selecciona un chat para empezar a hablar</p>
+        </div>
+        <div class="input-chat" id="inputChatContainer" style="display:none;">
+          <input type="text" id="mensajeInput" placeholder="Escribe un mensaje...">
+          <button onclick="enviarMensaje()">Enviar</button>
+        </div>
+      </section>
+
+      <!-- 🔹 Sección Configuración -->
+      <section id="config">
+        <h2>Configuración</h2>
+        <form>
+          <label>Nombre de usuario:<input type="text" placeholder="Escribe tu usuario"></label>
+          <label>Contraseña:<input type="password" placeholder="•••••••"></label>
+          <label>Notificaciones:<input type="checkbox" checked> Activar</label>
+          <button type="button">Guardar cambios</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- 🔹 Modales -->
+  <div id="modalHistoria" class="modal">
+    <span class="cerrar" onclick="cerrarHistoria()">&times;</span>
+    <img id="imgHistoria" src="" alt="Historia">
+    <button id="likeHistoria" onclick="likeHistoria()">❤️ Like</button>
+  </div>
+
+  <div id="modalHistoriaDestacada" class="modal">
+    <span class="cerrar" onclick="cerrarHistoriaDestacada()">&times;</span>
+    <img id="imgHistoriaDestacada" src="" alt="Historia destacada">
+    <button id="likeHistoriaDestacada" onclick="likeHistoriaDestacada()">❤️ Like</button>
+  </div>
+
+  <div id="modalPerfil" class="modal">
+    <span class="cerrar" onclick="cerrarModalPerfil()">&times;</span>
+    <img id="imgPerfil" src="" alt="Publicación">
+    <button id="likePerfil" onclick="likePerfil()">❤️ Like</button>
+  </div>
+
+  <!-- 🔹 Script -->
+  <script src="java_s/script.js"></script>
+</body>
+</html>
